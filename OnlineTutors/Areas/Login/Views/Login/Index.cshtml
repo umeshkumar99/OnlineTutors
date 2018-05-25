@@ -1,0 +1,245 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+   
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    
+    <link href="~/Content/font-icon.css" rel="stylesheet" type="text/css" />
+   
+    <script>
+
+        $(document).ready(function () {
+            //alert('body');
+
+            $('#username').focus();
+
+            $('#btnlogin').click(function () {
+                //alert('validate');
+                var usrname = document.getElementById('username');
+                var userpwd = document.getElementById('password');
+                if (usrname.value == "") {
+                    $('#validusername').html('Please enter username');
+                    $('#validusername').css('display', 'block');
+                    usrname.focus();
+                    return false;
+                }
+                else
+                    $('#validusername').css('display', 'none');
+
+
+
+                if (userpwd.value == "") {
+                        $('#validpass').html('Please enter password');
+                        $('#validpass').css('display', 'block');
+                        userpwd.focus();
+                        return false;
+                    }
+                    else
+                        $('#validpass').css('display', 'none');
+                //alert('validate');
+                debugger;
+                $.ajax(
+                 {
+
+              
+                     url:'@Url.Action("CheckLogin")',
+                     data: { usename: usrname.value, password: userpwd.value },
+                     method: 'Get',
+                     dataType: 'json',
+
+                     success: function (data) {
+
+                         debugger;
+                         alert(data.USer_Name);
+                         if (data.USer_Name != "" || data.USer_Name != null) {
+                             debugger;
+
+                             var urltoredirect = "http://" + location.host + "//admin/Category/Index";
+                             alert(urltoredirect);
+                             //Debug.writeln(urltoredirect.toString());
+                             window.location.assign(urltoredirect);
+                             //window.location = '~/Student/StudentDetails/Index';
+                             //$.post('@Url.Action("GetSudentDetails")');
+                         }
+                         else
+                         {
+                             alert("Wrong username or password. Please try again.");
+                             usrname.focus();
+                         }
+                     },
+                     error: function (err) {
+                         debugger;
+                         alert(err.statusText);
+                     }
+                 });
+
+            });
+            function validate()
+            {
+             //  alert('validate');
+                //var usrname = document.getElementById('username');
+                //var userpwd = document.getElementById('password');
+                //if (usrname.value == "") {
+                //    $('#validusername').html('Please enter username');
+                //    $('#validusername').css('display', 'block');
+                //    usrname.focus();
+                //    return false;
+                //}
+                //else
+                //    $('#validusername').css('display', 'none');
+
+
+
+                //if (userpwd.value == "") {
+                //        $('#validpass').html('Please enter password');
+                //        $('#validpass').css('display', 'block');
+                //        userpwd.focus();
+                //        return false;
+                //    }
+                //    else
+                //        $('#validpass').css('display', 'none');
+                //alert('validate');
+                //debugger;
+                //$.ajax(
+                // {
+
+                //     url: '/UserLogin/CheckLogin',
+                //     data: { usename: usrname.value, password: userpwd.value },
+                //     method: 'Get',
+                //     dataType: 'json',
+
+                //     success: function (data) {
+                //         alert(data);
+                //     },
+                //     error: function (err) {
+                //         alert(err);
+                //     }
+                // });
+
+
+                };
+
+
+
+
+            $('#username').blur(function () {
+                    if ($(this).val() == "") {
+                        $('#validusername').html('Please enter username');
+                        $('#validusername').css('display', 'block');
+                        $(this).focus();
+                    }
+                    else
+                        $('#validusername').css('display', 'none');
+              //  alert('focus lost');
+                });
+
+                $('#password').blur(function () {
+                    if ($(this).val() == "") {
+                        $('#validpass').html('Please enter password');
+                        $('#validpass').css('display', 'block');
+                        $(this).focus();
+                    }
+                    else
+                        $('#validpass').css('display', 'none');
+                    //debugger;
+
+                });
+
+                
+        });
+    </script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+<body>
+   
+        <div id="custom-bootstrap-menu" class="navbar navbar-default navbar-fixed-top " role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Welcome to Online Tutorials</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
+                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    </button>
+                </div>
+                </div>
+        </div>
+       
+
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <div class="panel panel-success" style="margin-top:150px;">
+                    <div class="panel-heading">Login Form</div>
+                    <div class="panel-body">
+                        <div class="col-md-8">
+
+
+                            @using (Html.BeginForm())
+
+                            { 
+                            /*   <form class="form-horizontal">*/
+
+                        <div class="form-group">
+                            
+                            <label for="Input User Name" class="label label-success">User Name</label>
+                         
+                              <input id="username" type="text" class="form-control" placeholder="Input User name" />
+                            <span style="display:none;color:red;" id="validusername" class="input-group"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Input Password" class="label label-success">Password</label>
+                            <input id="password" type="password" class="form-control" placeholder="Input password" />
+                            <span style="display:none;color:red;" id="validpass" class="input-group"></span>
+                        </div>
+                        <div class="form-group">
+        
+                            @*<input type="submit" value="submit" class="btn btn-success" />*@
+
+                            <button type="submit" class="btn btn-lg btn-success" id="btnlogin" value="">Login</button>
+                                                </div>
+
+@*</form>*@
+                            }
+                            
+                        </div>
+                    </div>
+                    <div class="panel-footer"></div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        
+        
+        
+   
+
+
+
+
+
+
+    <div id="custom-bootstrap-menu" class="navbar navbar-default navbar-fixed-bottom " role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Copyrights Reserved</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+                
+</body>
+</html>

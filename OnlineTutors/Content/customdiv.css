@@ -1,0 +1,9 @@
+﻿.mydiv{
+    min-height:100px;
+    background-color:aqua;
+    font-family:Arial;
+    font-weight:bold;
+    font-size:16px;
+   
+    /*margin:1px;*/
+}

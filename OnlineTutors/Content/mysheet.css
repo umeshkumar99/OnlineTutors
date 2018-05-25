@@ -1,0 +1,12 @@
+﻿
+.panel-info > .panel-heading
+{
+    color:#c2b3bd!important;
+    background-color:#3c1c03;
+    border-color:#d7e8ec;
+
+}
+.panel-body
+{
+    color:lime;
+}

@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OnlineTutorsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="USP_AddUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="ContactNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="Loginid" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="Branch_Id" Type="int" Mode="In" />
+          <Parameter Name="Groupid" Type="numeric" Mode="In" />
+          <Parameter Name="Compid" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="varchar" Mode="In" />
+          <Parameter Name="count" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="usp_CategoryGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_CategoryGetbyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_CategoryGetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_CategoryInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryName" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_CategoryUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryID" Type="int" Mode="In" />
+          <Parameter Name="CategoryName" Type="varchar" Mode="In" />
+          <Parameter Name="UpdatedBy" Type="int" Mode="In" />
+          <Parameter Name="status" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="USP_GetUserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LoginId" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_PageGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_PageGetbyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PageMasterID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_PageImmagesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ImageURL" Type="varchar" Mode="In" />
+          <Parameter Name="DisplayOrder" Type="int" Mode="In" />
+          <Parameter Name="PageID" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_PageInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PageName" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_PageUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PageID" Type="int" Mode="In" />
+          <Parameter Name="PageName" Type="varchar" Mode="In" />
+          <Parameter Name="UpdatedBy" Type="int" Mode="In" />
+          <Parameter Name="status" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_ServiceGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_ServiceGetbyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ServiceID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_ServiceInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Description" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="categoryid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_ServiceUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ServiceID" Type="int" Mode="In" />
+          <Parameter Name="Description" Type="varchar" Mode="In" />
+          <Parameter Name="UpdatedBy" Type="int" Mode="In" />
+          <Parameter Name="status" Type="bit" Mode="In" />
+          <Parameter Name="categoryid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pk_UserId" Type="numeric" Mode="In" />
+          <Parameter Name="p_UserName" Type="varchar" Mode="In" />
+          <Parameter Name="Company_Id" Type="int" Mode="In" />
+          <Parameter Name="p_Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="p_ContactNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="p_Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="Branch_Id" Type="int" Mode="In" />
+          <Parameter Name="p_GroupId" Type="numeric" Mode="In" />
+          <Parameter Name="p_Status" Type="bit" Mode="In" />
+        </Function>
+        <EntityContainer Name="OnlineTutorsModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OnlineTutorsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TutorsOnlineEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="USP_AddUser">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="ContactNo" Mode="In" Type="String" />
+            <Parameter Name="Loginid" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Branch_Id" Mode="In" Type="Int32" />
+            <Parameter Name="Groupid" Mode="In" Type="Decimal" />
+            <Parameter Name="Compid" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="String" />
+            <Parameter Name="count" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetUserDetails" ReturnType="Collection(OnlineTutorsModel.USP_GetUserDetails_Result)">
+            <Parameter Name="LoginId" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_UpdateUser">
+            <Parameter Name="pk_UserId" Mode="In" Type="Decimal" />
+            <Parameter Name="p_UserName" Mode="In" Type="String" />
+            <Parameter Name="Company_Id" Mode="In" Type="Int32" />
+            <Parameter Name="p_Email" Mode="In" Type="String" />
+            <Parameter Name="p_ContactNo" Mode="In" Type="String" />
+            <Parameter Name="p_Password" Mode="In" Type="String" />
+            <Parameter Name="Branch_Id" Mode="In" Type="Int32" />
+            <Parameter Name="p_GroupId" Mode="In" Type="Decimal" />
+            <Parameter Name="p_Status" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="usp_CategoryGet" ReturnType="Collection(OnlineTutorsModel.usp_CategoryGet_Result)" />
+          <FunctionImport Name="usp_CategoryGetbyID" ReturnType="Collection(OnlineTutorsModel.usp_CategoryGetbyID_Result)">
+          <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_CategoryInsert" ReturnType="Collection(Int32)">
+            <Parameter Name="CategoryName" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_CategoryUpdate" ReturnType="Collection(Int32)">
+            <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+            <Parameter Name="CategoryName" Mode="In" Type="String" />
+            <Parameter Name="UpdatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="usp_PageGet" ReturnType="Collection(OnlineTutorsModel.usp_PageGet_Result)" />
+          <FunctionImport Name="usp_PageGetbyID" ReturnType="Collection(OnlineTutorsModel.usp_PageGetbyID_Result)">
+          <Parameter Name="PageMasterID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_PageInsert" ReturnType="Collection(Int32)">
+            <Parameter Name="PageName" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_PageUpdate" ReturnType="Collection(Int32)">
+            <Parameter Name="PageID" Mode="In" Type="Int32" />
+            <Parameter Name="PageName" Mode="In" Type="String" />
+            <Parameter Name="UpdatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="usp_PageImmagesInsert" ReturnType="Collection(Int32)">
+            <Parameter Name="ImageURL" Mode="In" Type="String" />
+            <Parameter Name="DisplayOrder" Mode="In" Type="Int32" />
+            <Parameter Name="PageID" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_CategoryGetList" ReturnType="Collection(OnlineTutorsModel.usp_CategoryGetList_Result)" />
+          <FunctionImport Name="usp_ServiceGet" ReturnType="Collection(OnlineTutorsModel.usp_ServiceGet_Result)" />
+          <FunctionImport Name="usp_ServiceGetbyID" ReturnType="Collection(OnlineTutorsModel.usp_ServiceGetbyID_Result)">
+          <Parameter Name="ServiceID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ServiceInsert" ReturnType="Collection(Int32)">
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="categoryid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ServiceUpdate" ReturnType="Collection(Int32)">
+            <Parameter Name="ServiceID" Mode="In" Type="Int32" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="UpdatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="Boolean" />
+            <Parameter Name="categoryid" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="USP_GetUserDetails_Result">
+          <Property Type="Decimal" Name="USer_Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="USer_Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Contact_Number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Login_Id" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Group_Id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_CategoryGet_Result">
+          <Property Type="Int32" Name="CategoryID" Nullable="false" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="CreatedByID" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
+          <Property Type="String" Name="UpdatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="usp_CategoryGetbyID_Result">
+          <Property Type="Int32" Name="CategoryID" Nullable="false" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="CreatedByID" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
+          <Property Type="String" Name="UpdatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="usp_PageGet_Result">
+          <Property Type="Int32" Name="PageID" Nullable="false" />
+          <Property Type="String" Name="PageName" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="CreatedByID" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="usp_PageGetbyID_Result">
+          <Property Type="Int32" Name="PageID" Nullable="false" />
+          <Property Type="String" Name="PageName" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="CreatedByID" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="usp_CategoryGetList_Result">
+          <Property Type="Int32" Name="CategoryID" Nullable="false" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="usp_ServiceGet_Result">
+          <Property Type="Int32" Name="ServiceID" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="CategoryID" Nullable="false" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="CreatedByID" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="usp_ServiceGetbyID_Result">
+          <Property Type="Int32" Name="ServiceID" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="CategoryID" Nullable="false" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="CreatedByID" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OnlineTutorsModelStoreContainer" CdmEntityContainer="TutorsOnlineEntities" >
+          <FunctionImportMapping FunctionImportName="USP_AddUser" FunctionName="OnlineTutorsModel.Store.USP_AddUser" />
+          <FunctionImportMapping FunctionImportName="USP_GetUserDetails" FunctionName="OnlineTutorsModel.Store.USP_GetUserDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.USP_GetUserDetails_Result">
+                <ScalarProperty Name="USer_Id" ColumnName="USer_Id" />
+                <ScalarProperty Name="USer_Name" ColumnName="USer_Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+                <ScalarProperty Name="Login_Id" ColumnName="Login_Id" />
+                <ScalarProperty Name="Group_Id" ColumnName="Group_Id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_UpdateUser" FunctionName="OnlineTutorsModel.Store.USP_UpdateUser" />
+          <FunctionImportMapping FunctionImportName="usp_CategoryGet" FunctionName="OnlineTutorsModel.Store.usp_CategoryGet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_CategoryGet_Result">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_CategoryGetbyID" FunctionName="OnlineTutorsModel.Store.usp_CategoryGetbyID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_CategoryGetbyID_Result">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_CategoryInsert" FunctionName="OnlineTutorsModel.Store.usp_CategoryInsert" />
+          <FunctionImportMapping FunctionImportName="usp_CategoryUpdate" FunctionName="OnlineTutorsModel.Store.usp_CategoryUpdate" />
+          <FunctionImportMapping FunctionImportName="usp_PageGet" FunctionName="OnlineTutorsModel.Store.usp_PageGet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_PageGet_Result">
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_PageGetbyID" FunctionName="OnlineTutorsModel.Store.usp_PageGetbyID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_PageGetbyID_Result">
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_PageInsert" FunctionName="OnlineTutorsModel.Store.usp_PageInsert" />
+          <FunctionImportMapping FunctionImportName="usp_PageUpdate" FunctionName="OnlineTutorsModel.Store.usp_PageUpdate" />
+          <FunctionImportMapping FunctionImportName="usp_PageImmagesInsert" FunctionName="OnlineTutorsModel.Store.usp_PageImmagesInsert" />
+          <FunctionImportMapping FunctionImportName="usp_CategoryGetList" FunctionName="OnlineTutorsModel.Store.usp_CategoryGetList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_CategoryGetList_Result">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ServiceGet" FunctionName="OnlineTutorsModel.Store.usp_ServiceGet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_ServiceGet_Result">
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ServiceGetbyID" FunctionName="OnlineTutorsModel.Store.usp_ServiceGetbyID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_ServiceGetbyID_Result">
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ServiceInsert" FunctionName="OnlineTutorsModel.Store.usp_ServiceInsert" />
+          <FunctionImportMapping FunctionImportName="usp_ServiceUpdate" FunctionName="OnlineTutorsModel.Store.usp_ServiceUpdate" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
