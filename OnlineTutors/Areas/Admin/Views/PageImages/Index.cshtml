@@ -1,0 +1,103 @@
+﻿@model IEnumerable<OnlineTutorsEntities.usp_tblPageImagesGet_Result>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<div class="container-fluid">
+<div class="row" style="margin-top:50px;">
+    <h2>Service List</h2>
+</div>
+    <div class="row">
+        <div class="col-md-2">
+            <p class="btn btn-success" style="color:white!important;font-weight:bold;margin-bottom:20px;">
+                @Html.ActionLink("Create New", "Create")
+            </p>
+        </div>
+    </div>
+    <div class="col-md-12 col-lg-12 ">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Imageid)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PageName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ImageURL)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DisplayOrder)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedOn)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.UpdatedBy)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UpdatedOn)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.status)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Imageid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PageName)
+                        </td>
+
+                        <td>
+                            @if (item.ImageURL != null && item.ImageURL != "")
+                            {
+                                <img src="@Url.Content(item.ImageURL)" class="img-responsive"/>
+                            }
+                            
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DisplayOrder)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedOn)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UpdatedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UpdatedOn)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.status)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { Imageid = item.Imageid  }) |
+                            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                            @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

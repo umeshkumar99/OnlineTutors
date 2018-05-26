@@ -29,7 +29,7 @@
                 @Html.LabelFor(model => model.CategoryName, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @*@Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })*@
-                    @Html.DropDownListFor(model => model.CategoryID, ViewBag.Category as List<SelectListItem>, "Select Category")
+                    @Html.DropDownListFor(model => model.CategoryID, ViewBag.Categoryid as List<SelectListItem>, "Select Category")
                     
                     @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
                 </div>

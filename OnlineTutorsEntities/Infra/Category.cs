@@ -12,6 +12,12 @@ namespace OnlineTutorsEntities
 
     }
 
+    public class login
+    {
+        public string loginID { get; set; }
+        public string Password { get; set; }
+
+    }
     public class Category
     {
         public int CategoryID { get; set; }

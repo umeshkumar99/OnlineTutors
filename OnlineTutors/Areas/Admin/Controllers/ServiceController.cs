@@ -11,15 +11,13 @@ namespace OnlineTutors.Areas.Admin.Controllers
     {
         // GET: Admin/Service
         TutorsOnlineEntities onlinetutor = new TutorsOnlineEntities();
-        bool duplicate = false;
+
         // GET: Admin/Category
         public ActionResult Index()
         {
             try
             {
-        
-                
-                List<usp_ServiceGet_Result> servicelist = onlinetutor.usp_ServiceGet().ToList();
+                 List<usp_ServiceGet_Result> servicelist = onlinetutor.usp_ServiceGet().ToList();
                 return View(servicelist);
             }
             catch (Exception ex)
@@ -33,7 +31,7 @@ namespace OnlineTutors.Areas.Admin.Controllers
         {
             try
             {
-                ViewBag.Category = new SelectList(onlinetutor.usp_CategoryGetList(), "CategoryID", "CategoryName");
+                ViewBag.Categoryid = new SelectList(onlinetutor.usp_CategoryGetList(), "CategoryID", "CategoryName");
                 usp_ServiceGetbyID_Result servicedetail = onlinetutor.usp_ServiceGetbyID(serviceid).FirstOrDefault();
                 return View(servicedetail);
             }
@@ -62,9 +60,8 @@ namespace OnlineTutors.Areas.Admin.Controllers
         public ActionResult Create()
         {
 
-            ViewBag.Category = new SelectList(onlinetutor.usp_CategoryGetList(), "CategoryID", "CategoryName");
-            if (duplicate)
-                ViewBag.error = "Duplicate Category Name";
+            ViewBag.CategoryID = new SelectList(onlinetutor.usp_CategoryGetList(), "CategoryID", "CategoryName");
+           
             return View();
         }
         [HttpPost]
@@ -73,15 +70,22 @@ namespace OnlineTutors.Areas.Admin.Controllers
             try
             {
                 usp_ServiceGetbyID_Result service = new usp_ServiceGetbyID_Result();
-                TryUpdateModel(service);
-                int result = (int)onlinetutor.usp_ServiceInsert(service.Description, 1,service.CategoryID).FirstOrDefault();
-                if (result == 1)
-                    return RedirectToAction("Index");
+                int result=0;
+                if (ModelState.IsValid)
+                {
+                    TryUpdateModel(service);
+                     result = (int)onlinetutor.usp_ServiceInsert(service.Description, 1, service.CategoryID).FirstOrDefault();
+                }
+                if (result == 1) {
+                             return RedirectToAction("Index");
+                }
+                  
                 else
                 {
-                    duplicate = true;
-
-                    return View("Create");
+                    ViewBag.CategoryID = new SelectList(onlinetutor.usp_CategoryGetList(), "CategoryID", "CategoryName");
+                    ModelState.AddModelError("", "Service already exists");
+                    return View("create");
+                    
                 }
             }
             catch (Exception ex)

@@ -171,6 +171,7 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\BlogContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\PageContentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PageImagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\PageMasterController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServiceController.cs" />
     <Compile Include="Areas\Login\Controllers\LoginController.cs" />
@@ -231,7 +232,17 @@
     <Content Include="Areas\Admin\Views\Service\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Service\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Service\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PageImages\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PageImages\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PageImages\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PageContent\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PageContent\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PageContent\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PageBlog\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PageBlog\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PageBlog\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\commanscript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -284,8 +295,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\PageBlog\" />
-    <Folder Include="Areas\Admin\Views\PageContent\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Login\Models\" />
     <Folder Include="Areas\Login\Views\Shared\" />

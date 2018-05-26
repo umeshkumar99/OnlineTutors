@@ -49,21 +49,20 @@
                 $.ajax(
                  {
 
-              
                      url:'@Url.Action("CheckLogin")',
-                     data: { usename: usrname.value, password: userpwd.value },
-                     method: 'Get',
+                     data: { loginID: usrname.value, Password: userpwd.value },
+                     method: 'Post',
                      dataType: 'json',
 
                      success: function (data) {
 
                          debugger;
-                         alert(data.USer_Name);
-                         if (data.USer_Name != "" || data.USer_Name != null) {
+                         //alert(data.USer_Name);
+                         if ( data != null) {
                              debugger;
 
                              var urltoredirect = "http://" + location.host + "//admin/Category/Index";
-                             alert(urltoredirect);
+                             //alert(urltoredirect);
                              //Debug.writeln(urltoredirect.toString());
                              window.location.assign(urltoredirect);
                              //window.location = '~/Student/StudentDetails/Index';
@@ -201,7 +200,7 @@
         
                             @*<input type="submit" value="submit" class="btn btn-success" />*@
 
-                            <button type="submit" class="btn btn-lg btn-success" id="btnlogin" value="">Login</button>
+                            <button type="button" class="btn btn-lg btn-success" id="btnlogin" value="">Login</button>
                                                 </div>
 
 @*</form>*@

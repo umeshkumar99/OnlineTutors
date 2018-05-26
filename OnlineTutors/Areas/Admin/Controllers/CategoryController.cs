@@ -57,8 +57,7 @@ namespace OnlineTutors.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            if(duplicate)
-                ViewBag.error = "Duplicate Category Name";
+           
             return View();
         }
         [HttpPost]
@@ -71,8 +70,9 @@ namespace OnlineTutors.Areas.Admin.Controllers
                     return RedirectToAction("Index");
                 else
                 {
-                    duplicate = true;
-                    
+
+                    ModelState.AddModelError("", "Category already exists");
+
                     return View("Create");
                 }
             }

@@ -97,7 +97,7 @@ namespace OnlineTutors.Areas.Admin.Controllers
                     return RedirectToAction("Index");
                 else
                 {
-                    ViewBag.error = "Duplicate Page Name";
+                    ModelState.AddModelError("", "Page already exists");
                     return RedirectToAction("Create");
                 }
             }

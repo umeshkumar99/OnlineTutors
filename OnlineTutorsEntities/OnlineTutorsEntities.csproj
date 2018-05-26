@@ -141,6 +141,9 @@
     <Compile Include="usp_PageGetbyID_Result.cs">
       <DependentUpon>TutorsOnline.tt</DependentUpon>
     </Compile>
+    <Compile Include="usp_PageGetList_Result.cs">
+      <DependentUpon>TutorsOnline.tt</DependentUpon>
+    </Compile>
     <Compile Include="usp_PageGet_Result.cs">
       <DependentUpon>TutorsOnline.tt</DependentUpon>
     </Compile>
@@ -148,6 +151,24 @@
       <DependentUpon>TutorsOnline.tt</DependentUpon>
     </Compile>
     <Compile Include="usp_ServiceGet_Result.cs">
+      <DependentUpon>TutorsOnline.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_tblBlogContentGetID_Result.cs">
+      <DependentUpon>TutorsOnline.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_tblBlogContentGet_Result.cs">
+      <DependentUpon>TutorsOnline.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_tblPageContentGetID_Result.cs">
+      <DependentUpon>TutorsOnline.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_tblPageContentGet_Result.cs">
+      <DependentUpon>TutorsOnline.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_tblPageImagesGetbyID_Result.cs">
+      <DependentUpon>TutorsOnline.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_tblPageImagesGet_Result.cs">
       <DependentUpon>TutorsOnline.tt</DependentUpon>
     </Compile>
   </ItemGroup>

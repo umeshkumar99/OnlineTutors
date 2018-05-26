@@ -40,6 +40,7 @@
         <Function Name="usp_PageGetbyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PageMasterID" Type="int" Mode="In" />
         </Function>
+        <Function Name="usp_PageGetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_PageImmagesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ImageURL" Type="varchar" Mode="In" />
           <Parameter Name="DisplayOrder" Type="int" Mode="In" />
@@ -71,6 +72,79 @@
           <Parameter Name="UpdatedBy" Type="int" Mode="In" />
           <Parameter Name="status" Type="bit" Mode="In" />
           <Parameter Name="categoryid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_tblBlogContentGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_tblBlogContentGetID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_tblBlogContentInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pageid" Type="int" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="Keywords" Type="varchar" Mode="In" />
+          <Parameter Name="KeywordDesc" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Pageh1" Type="varchar" Mode="In" />
+          <Parameter Name="BlogContent" Type="varchar(max)" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="displayorder" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_tblBlogContentUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="pageid" Type="int" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="Keywords" Type="varchar" Mode="In" />
+          <Parameter Name="KeywordDesc" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Pageh1" Type="varchar" Mode="In" />
+          <Parameter Name="BlogContent" Type="varchar(max)" Mode="In" />
+          <Parameter Name="UpdatedBy" Type="int" Mode="In" />
+          <Parameter Name="Status" Type="bit" Mode="In" />
+          <Parameter Name="displayorder" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_tblPageContentGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_tblPageContentGetID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_tblPageContentInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pageid" Type="int" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="Keywords" Type="varchar" Mode="In" />
+          <Parameter Name="KeywordDesc" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Pageh1" Type="varchar" Mode="In" />
+          <Parameter Name="pagecontent" Type="varchar(max)" Mode="In" />
+          <Parameter Name="displayorder" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_tblPageContentUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="pageid" Type="int" Mode="In" />
+          <Parameter Name="Title" Type="varchar" Mode="In" />
+          <Parameter Name="Keywords" Type="varchar" Mode="In" />
+          <Parameter Name="KeywordDesc" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Pageh1" Type="varchar" Mode="In" />
+          <Parameter Name="pagecontent" Type="varchar(max)" Mode="In" />
+          <Parameter Name="displayorder" Type="int" Mode="In" />
+          <Parameter Name="UpdatedBy" Type="int" Mode="In" />
+          <Parameter Name="Status" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="usp_tblPageImagesGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_tblPageImagesGetbyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Imageid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_tblPageImagesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ImageURL" Type="varchar" Mode="In" />
+          <Parameter Name="DisplayOrder" Type="int" Mode="In" />
+          <Parameter Name="PageID" Type="int" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_tblPageImagesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Imageid" Type="int" Mode="In" />
+          <Parameter Name="ImageURL" Type="varchar" Mode="In" />
+          <Parameter Name="DisplayOrder" Type="int" Mode="In" />
+          <Parameter Name="PageID" Type="int" Mode="In" />
+          <Parameter Name="status" Type="bit" Mode="In" />
+          <Parameter Name="UpdatedBy" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_tblPageMasterListGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Status" Type="int" Mode="In" />
         </Function>
         <Function Name="USP_UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="pk_UserId" Type="numeric" Mode="In" />
@@ -167,6 +241,80 @@
             <Parameter Name="status" Mode="In" Type="Boolean" />
             <Parameter Name="categoryid" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="usp_tblPageMasterListGet">
+          <Parameter Name="Status" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_PageGetList" ReturnType="Collection(OnlineTutorsModel.usp_PageGetList_Result)" />
+          <FunctionImport Name="usp_tblPageImagesUpdate" ReturnType="Collection(Int32)">
+            <Parameter Name="Imageid" Mode="In" Type="Int32" />
+            <Parameter Name="ImageURL" Mode="In" Type="String" />
+            <Parameter Name="DisplayOrder" Mode="In" Type="Int32" />
+            <Parameter Name="PageID" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="Boolean" />
+            <Parameter Name="UpdatedBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_tblPageImagesInsert" ReturnType="Collection(Int32)">
+            <Parameter Name="ImageURL" Mode="In" Type="String" />
+            <Parameter Name="DisplayOrder" Mode="In" Type="Int32" />
+            <Parameter Name="PageID" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_tblBlogContentGetID" ReturnType="Collection(OnlineTutorsModel.usp_tblBlogContentGetID_Result)">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_tblBlogContentInsert">
+            <Parameter Name="pageid" Mode="In" Type="Int32" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="Keywords" Mode="In" Type="String" />
+            <Parameter Name="KeywordDesc" Mode="In" Type="String" />
+            <Parameter Name="Pageh1" Mode="In" Type="String" />
+            <Parameter Name="BlogContent" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="displayorder" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_tblBlogContentUpdate">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="pageid" Mode="In" Type="Int32" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="Keywords" Mode="In" Type="String" />
+            <Parameter Name="KeywordDesc" Mode="In" Type="String" />
+            <Parameter Name="Pageh1" Mode="In" Type="String" />
+            <Parameter Name="BlogContent" Mode="In" Type="String" />
+            <Parameter Name="UpdatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="Status" Mode="In" Type="Boolean" />
+            <Parameter Name="displayorder" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_tblPageContentGet" ReturnType="Collection(OnlineTutorsModel.usp_tblPageContentGet_Result)" />
+          <FunctionImport Name="usp_tblPageContentGetID" ReturnType="Collection(OnlineTutorsModel.usp_tblPageContentGetID_Result)">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_tblPageImagesGet" ReturnType="Collection(OnlineTutorsModel.usp_tblPageImagesGet_Result)" />
+          <FunctionImport Name="usp_tblPageImagesGetbyID" ReturnType="Collection(OnlineTutorsModel.usp_tblPageImagesGetbyID_Result)">
+          <Parameter Name="Imageid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_tblPageContentUpdate" ReturnType="Collection(Int32)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="pageid" Mode="In" Type="Int32" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="Keywords" Mode="In" Type="String" />
+            <Parameter Name="KeywordDesc" Mode="In" Type="String" />
+            <Parameter Name="Pageh1" Mode="In" Type="String" />
+            <Parameter Name="pagecontent" Mode="In" Type="String" />
+            <Parameter Name="displayorder" Mode="In" Type="Int32" />
+            <Parameter Name="UpdatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="Status" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="usp_tblPageContentInsert" ReturnType="Collection(Int32)">
+            <Parameter Name="pageid" Mode="In" Type="Int32" />
+            <Parameter Name="Title" Mode="In" Type="String" />
+            <Parameter Name="Keywords" Mode="In" Type="String" />
+            <Parameter Name="KeywordDesc" Mode="In" Type="String" />
+            <Parameter Name="Pageh1" Mode="In" Type="String" />
+            <Parameter Name="pagecontent" Mode="In" Type="String" />
+            <Parameter Name="displayorder" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_tblBlogContentGet" ReturnType="Collection(OnlineTutorsModel.usp_tblBlogContentGet_Result)" />
         </EntityContainer>
         <ComplexType Name="USP_GetUserDetails_Result">
           <Property Type="Decimal" Name="USer_Id" Nullable="false" Precision="18" Scale="0" />
@@ -249,6 +397,110 @@
           <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
           <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
           <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="usp_PageGetList_Result">
+          <Property Type="Int32" Name="PageID" Nullable="false" />
+          <Property Type="String" Name="PageName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="usp_tblBlogContentGetID_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="pageid" Nullable="true" />
+          <Property Type="String" Name="PageName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Keywords" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="KeywordDesc" Nullable="true" />
+          <Property Type="String" Name="Pageh1" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="BlogContent" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="CreatedByID" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="displayorder" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_tblPageContentGet_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="pageid" Nullable="false" />
+          <Property Type="String" Name="PageName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Keywords" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="KeywordDesc" Nullable="true" />
+          <Property Type="String" Name="Pageh1" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pagecontent" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="CreatedByID" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="displayorder" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_tblPageContentGetID_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="pageid" Nullable="false" />
+          <Property Type="String" Name="PageName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Keywords" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="KeywordDesc" Nullable="true" />
+          <Property Type="String" Name="Pageh1" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="pagecontent" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="false" />
+          <Property Type="Int32" Name="CreatedByID" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="displayorder" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_tblPageImagesGet_Result">
+          <Property Type="Int32" Name="Imageid" Nullable="false" />
+          <Property Type="String" Name="ImageURL" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="DisplayOrder" Nullable="true" />
+          <Property Type="Int32" Name="PageID" Nullable="true" />
+          <Property Type="String" Name="PageName" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="status" Nullable="true" />
+          <Property Type="Int32" Name="CreatedByID" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="usp_tblPageImagesGetbyID_Result">
+          <Property Type="Int32" Name="Imageid" Nullable="false" />
+          <Property Type="String" Name="ImageURL" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="DisplayOrder" Nullable="true" />
+          <Property Type="Int32" Name="PageID" Nullable="true" />
+          <Property Type="String" Name="PageName" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="status" Nullable="true" />
+          <Property Type="Int32" Name="CreatedByID" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="usp_tblBlogContentGet_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="pageid" Nullable="true" />
+          <Property Type="String" Name="PageName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Keywords" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="KeywordDesc" Nullable="true" />
+          <Property Type="String" Name="Pageh1" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="BlogContent" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="CreatedByID" Nullable="true" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="UpdatedByID" Nullable="true" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="displayorder" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -379,6 +631,146 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="usp_ServiceInsert" FunctionName="OnlineTutorsModel.Store.usp_ServiceInsert" />
           <FunctionImportMapping FunctionImportName="usp_ServiceUpdate" FunctionName="OnlineTutorsModel.Store.usp_ServiceUpdate" />
+          <FunctionImportMapping FunctionImportName="usp_tblPageMasterListGet" FunctionName="OnlineTutorsModel.Store.usp_tblPageMasterListGet">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_PageGetList" FunctionName="OnlineTutorsModel.Store.usp_PageGetList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_PageGetList_Result">
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_tblPageImagesUpdate" FunctionName="OnlineTutorsModel.Store.usp_tblPageImagesUpdate" />
+          <FunctionImportMapping FunctionImportName="usp_tblPageImagesInsert" FunctionName="OnlineTutorsModel.Store.usp_tblPageImagesInsert" />
+          <FunctionImportMapping FunctionImportName="usp_tblBlogContentGetID" FunctionName="OnlineTutorsModel.Store.usp_tblBlogContentGetID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_tblBlogContentGetID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="pageid" ColumnName="pageid" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="KeywordDesc" ColumnName="KeywordDesc" />
+                <ScalarProperty Name="Pageh1" ColumnName="Pageh1" />
+                <ScalarProperty Name="BlogContent" ColumnName="BlogContent" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="displayorder" ColumnName="displayorder" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_tblBlogContentInsert" FunctionName="OnlineTutorsModel.Store.usp_tblBlogContentInsert" />
+          <FunctionImportMapping FunctionImportName="usp_tblBlogContentUpdate" FunctionName="OnlineTutorsModel.Store.usp_tblBlogContentUpdate" />
+          <FunctionImportMapping FunctionImportName="usp_tblPageContentGet" FunctionName="OnlineTutorsModel.Store.usp_tblPageContentGet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_tblPageContentGet_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="pageid" ColumnName="pageid" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="KeywordDesc" ColumnName="KeywordDesc" />
+                <ScalarProperty Name="Pageh1" ColumnName="Pageh1" />
+                <ScalarProperty Name="pagecontent" ColumnName="pagecontent" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="displayorder" ColumnName="displayorder" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_tblPageContentGetID" FunctionName="OnlineTutorsModel.Store.usp_tblPageContentGetID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_tblPageContentGetID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="pageid" ColumnName="pageid" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="KeywordDesc" ColumnName="KeywordDesc" />
+                <ScalarProperty Name="Pageh1" ColumnName="Pageh1" />
+                <ScalarProperty Name="pagecontent" ColumnName="pagecontent" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="displayorder" ColumnName="displayorder" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_tblPageImagesGet" FunctionName="OnlineTutorsModel.Store.usp_tblPageImagesGet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_tblPageImagesGet_Result">
+                <ScalarProperty Name="Imageid" ColumnName="Imageid" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_tblPageImagesGetbyID" FunctionName="OnlineTutorsModel.Store.usp_tblPageImagesGetbyID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_tblPageImagesGetbyID_Result">
+                <ScalarProperty Name="Imageid" ColumnName="Imageid" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_tblPageContentUpdate" FunctionName="OnlineTutorsModel.Store.usp_tblPageContentUpdate" />
+          <FunctionImportMapping FunctionImportName="usp_tblPageContentInsert" FunctionName="OnlineTutorsModel.Store.usp_tblPageContentInsert" />
+          <FunctionImportMapping FunctionImportName="usp_tblBlogContentGet" FunctionName="OnlineTutorsModel.Store.usp_tblBlogContentGet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="OnlineTutorsModel.usp_tblBlogContentGet_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="pageid" ColumnName="pageid" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="KeywordDesc" ColumnName="KeywordDesc" />
+                <ScalarProperty Name="Pageh1" ColumnName="Pageh1" />
+                <ScalarProperty Name="BlogContent" ColumnName="BlogContent" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedByID" ColumnName="UpdatedByID" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="displayorder" ColumnName="displayorder" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

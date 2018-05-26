@@ -300,5 +300,275 @@ namespace OnlineTutorsEntities
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("usp_ServiceUpdate", serviceIDParameter, descriptionParameter, updatedByParameter, statusParameter, categoryidParameter);
         }
+    
+        public virtual int usp_tblPageMasterListGet(Nullable<int> status)
+        {
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_tblPageMasterListGet", statusParameter);
+        }
+    
+        public virtual ObjectResult<usp_PageGetList_Result> usp_PageGetList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_PageGetList_Result>("usp_PageGetList");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> usp_tblPageImagesUpdate(Nullable<int> imageid, string imageURL, Nullable<int> displayOrder, Nullable<int> pageID, Nullable<bool> status, Nullable<int> updatedBy)
+        {
+            var imageidParameter = imageid.HasValue ?
+                new ObjectParameter("Imageid", imageid) :
+                new ObjectParameter("Imageid", typeof(int));
+    
+            var imageURLParameter = imageURL != null ?
+                new ObjectParameter("ImageURL", imageURL) :
+                new ObjectParameter("ImageURL", typeof(string));
+    
+            var displayOrderParameter = displayOrder.HasValue ?
+                new ObjectParameter("DisplayOrder", displayOrder) :
+                new ObjectParameter("DisplayOrder", typeof(int));
+    
+            var pageIDParameter = pageID.HasValue ?
+                new ObjectParameter("PageID", pageID) :
+                new ObjectParameter("PageID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(bool));
+    
+            var updatedByParameter = updatedBy.HasValue ?
+                new ObjectParameter("UpdatedBy", updatedBy) :
+                new ObjectParameter("UpdatedBy", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("usp_tblPageImagesUpdate", imageidParameter, imageURLParameter, displayOrderParameter, pageIDParameter, statusParameter, updatedByParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> usp_tblPageImagesInsert(string imageURL, Nullable<int> displayOrder, Nullable<int> pageID, Nullable<int> createdBy)
+        {
+            var imageURLParameter = imageURL != null ?
+                new ObjectParameter("ImageURL", imageURL) :
+                new ObjectParameter("ImageURL", typeof(string));
+    
+            var displayOrderParameter = displayOrder.HasValue ?
+                new ObjectParameter("DisplayOrder", displayOrder) :
+                new ObjectParameter("DisplayOrder", typeof(int));
+    
+            var pageIDParameter = pageID.HasValue ?
+                new ObjectParameter("PageID", pageID) :
+                new ObjectParameter("PageID", typeof(int));
+    
+            var createdByParameter = createdBy.HasValue ?
+                new ObjectParameter("CreatedBy", createdBy) :
+                new ObjectParameter("CreatedBy", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("usp_tblPageImagesInsert", imageURLParameter, displayOrderParameter, pageIDParameter, createdByParameter);
+        }
+    
+        public virtual ObjectResult<usp_tblBlogContentGetID_Result> usp_tblBlogContentGetID(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_tblBlogContentGetID_Result>("usp_tblBlogContentGetID", iDParameter);
+        }
+    
+        public virtual int usp_tblBlogContentInsert(Nullable<int> pageid, string title, string keywords, string keywordDesc, string pageh1, string blogContent, Nullable<int> createdBy, Nullable<int> displayorder)
+        {
+            var pageidParameter = pageid.HasValue ?
+                new ObjectParameter("pageid", pageid) :
+                new ObjectParameter("pageid", typeof(int));
+    
+            var titleParameter = title != null ?
+                new ObjectParameter("Title", title) :
+                new ObjectParameter("Title", typeof(string));
+    
+            var keywordsParameter = keywords != null ?
+                new ObjectParameter("Keywords", keywords) :
+                new ObjectParameter("Keywords", typeof(string));
+    
+            var keywordDescParameter = keywordDesc != null ?
+                new ObjectParameter("KeywordDesc", keywordDesc) :
+                new ObjectParameter("KeywordDesc", typeof(string));
+    
+            var pageh1Parameter = pageh1 != null ?
+                new ObjectParameter("Pageh1", pageh1) :
+                new ObjectParameter("Pageh1", typeof(string));
+    
+            var blogContentParameter = blogContent != null ?
+                new ObjectParameter("BlogContent", blogContent) :
+                new ObjectParameter("BlogContent", typeof(string));
+    
+            var createdByParameter = createdBy.HasValue ?
+                new ObjectParameter("CreatedBy", createdBy) :
+                new ObjectParameter("CreatedBy", typeof(int));
+    
+            var displayorderParameter = displayorder.HasValue ?
+                new ObjectParameter("displayorder", displayorder) :
+                new ObjectParameter("displayorder", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_tblBlogContentInsert", pageidParameter, titleParameter, keywordsParameter, keywordDescParameter, pageh1Parameter, blogContentParameter, createdByParameter, displayorderParameter);
+        }
+    
+        public virtual int usp_tblBlogContentUpdate(Nullable<int> id, Nullable<int> pageid, string title, string keywords, string keywordDesc, string pageh1, string blogContent, Nullable<int> updatedBy, Nullable<bool> status, Nullable<int> displayorder)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var pageidParameter = pageid.HasValue ?
+                new ObjectParameter("pageid", pageid) :
+                new ObjectParameter("pageid", typeof(int));
+    
+            var titleParameter = title != null ?
+                new ObjectParameter("Title", title) :
+                new ObjectParameter("Title", typeof(string));
+    
+            var keywordsParameter = keywords != null ?
+                new ObjectParameter("Keywords", keywords) :
+                new ObjectParameter("Keywords", typeof(string));
+    
+            var keywordDescParameter = keywordDesc != null ?
+                new ObjectParameter("KeywordDesc", keywordDesc) :
+                new ObjectParameter("KeywordDesc", typeof(string));
+    
+            var pageh1Parameter = pageh1 != null ?
+                new ObjectParameter("Pageh1", pageh1) :
+                new ObjectParameter("Pageh1", typeof(string));
+    
+            var blogContentParameter = blogContent != null ?
+                new ObjectParameter("BlogContent", blogContent) :
+                new ObjectParameter("BlogContent", typeof(string));
+    
+            var updatedByParameter = updatedBy.HasValue ?
+                new ObjectParameter("UpdatedBy", updatedBy) :
+                new ObjectParameter("UpdatedBy", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(bool));
+    
+            var displayorderParameter = displayorder.HasValue ?
+                new ObjectParameter("displayorder", displayorder) :
+                new ObjectParameter("displayorder", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_tblBlogContentUpdate", idParameter, pageidParameter, titleParameter, keywordsParameter, keywordDescParameter, pageh1Parameter, blogContentParameter, updatedByParameter, statusParameter, displayorderParameter);
+        }
+    
+        public virtual ObjectResult<usp_tblPageContentGet_Result> usp_tblPageContentGet()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_tblPageContentGet_Result>("usp_tblPageContentGet");
+        }
+    
+        public virtual ObjectResult<usp_tblPageContentGetID_Result> usp_tblPageContentGetID(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_tblPageContentGetID_Result>("usp_tblPageContentGetID", iDParameter);
+        }
+    
+        public virtual ObjectResult<usp_tblPageImagesGet_Result> usp_tblPageImagesGet()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_tblPageImagesGet_Result>("usp_tblPageImagesGet");
+        }
+    
+        public virtual ObjectResult<usp_tblPageImagesGetbyID_Result> usp_tblPageImagesGetbyID(Nullable<int> imageid)
+        {
+            var imageidParameter = imageid.HasValue ?
+                new ObjectParameter("Imageid", imageid) :
+                new ObjectParameter("Imageid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_tblPageImagesGetbyID_Result>("usp_tblPageImagesGetbyID", imageidParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> usp_tblPageContentUpdate(Nullable<int> id, Nullable<int> pageid, string title, string keywords, string keywordDesc, string pageh1, string pagecontent, Nullable<int> displayorder, Nullable<int> updatedBy, Nullable<bool> status)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var pageidParameter = pageid.HasValue ?
+                new ObjectParameter("pageid", pageid) :
+                new ObjectParameter("pageid", typeof(int));
+    
+            var titleParameter = title != null ?
+                new ObjectParameter("Title", title) :
+                new ObjectParameter("Title", typeof(string));
+    
+            var keywordsParameter = keywords != null ?
+                new ObjectParameter("Keywords", keywords) :
+                new ObjectParameter("Keywords", typeof(string));
+    
+            var keywordDescParameter = keywordDesc != null ?
+                new ObjectParameter("KeywordDesc", keywordDesc) :
+                new ObjectParameter("KeywordDesc", typeof(string));
+    
+            var pageh1Parameter = pageh1 != null ?
+                new ObjectParameter("Pageh1", pageh1) :
+                new ObjectParameter("Pageh1", typeof(string));
+    
+            var pagecontentParameter = pagecontent != null ?
+                new ObjectParameter("pagecontent", pagecontent) :
+                new ObjectParameter("pagecontent", typeof(string));
+    
+            var displayorderParameter = displayorder.HasValue ?
+                new ObjectParameter("displayorder", displayorder) :
+                new ObjectParameter("displayorder", typeof(int));
+    
+            var updatedByParameter = updatedBy.HasValue ?
+                new ObjectParameter("UpdatedBy", updatedBy) :
+                new ObjectParameter("UpdatedBy", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("usp_tblPageContentUpdate", idParameter, pageidParameter, titleParameter, keywordsParameter, keywordDescParameter, pageh1Parameter, pagecontentParameter, displayorderParameter, updatedByParameter, statusParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> usp_tblPageContentInsert(Nullable<int> pageid, string title, string keywords, string keywordDesc, string pageh1, string pagecontent, Nullable<int> displayorder, Nullable<int> createdBy)
+        {
+            var pageidParameter = pageid.HasValue ?
+                new ObjectParameter("pageid", pageid) :
+                new ObjectParameter("pageid", typeof(int));
+    
+            var titleParameter = title != null ?
+                new ObjectParameter("Title", title) :
+                new ObjectParameter("Title", typeof(string));
+    
+            var keywordsParameter = keywords != null ?
+                new ObjectParameter("Keywords", keywords) :
+                new ObjectParameter("Keywords", typeof(string));
+    
+            var keywordDescParameter = keywordDesc != null ?
+                new ObjectParameter("KeywordDesc", keywordDesc) :
+                new ObjectParameter("KeywordDesc", typeof(string));
+    
+            var pageh1Parameter = pageh1 != null ?
+                new ObjectParameter("Pageh1", pageh1) :
+                new ObjectParameter("Pageh1", typeof(string));
+    
+            var pagecontentParameter = pagecontent != null ?
+                new ObjectParameter("pagecontent", pagecontent) :
+                new ObjectParameter("pagecontent", typeof(string));
+    
+            var displayorderParameter = displayorder.HasValue ?
+                new ObjectParameter("displayorder", displayorder) :
+                new ObjectParameter("displayorder", typeof(int));
+    
+            var createdByParameter = createdBy.HasValue ?
+                new ObjectParameter("CreatedBy", createdBy) :
+                new ObjectParameter("CreatedBy", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("usp_tblPageContentInsert", pageidParameter, titleParameter, keywordsParameter, keywordDescParameter, pageh1Parameter, pagecontentParameter, displayorderParameter, createdByParameter);
+        }
+    
+        public virtual ObjectResult<usp_tblBlogContentGet_Result> usp_tblBlogContentGet()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_tblBlogContentGet_Result>("usp_tblBlogContentGet");
+        }
     }
 }

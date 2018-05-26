@@ -14,13 +14,21 @@ namespace OnlineTutors.Areas.Login.Controllers
         {
             return View();
         }
-        [HttpGet]
-        public JsonResult CheckLogin(string usename, string password)
+        [HttpPost]
+        public ActionResult CheckLogin(login obj)
         {
+            try
+            {
+                USP_GetUserDetails_Result userdetails = onlinetutor.USP_GetUserDetails(obj.loginID, obj.Password).FirstOrDefault();
+                //return RedirectToAction("Index", "Category", new { area = "Admin" });
+                return Json(userdetails, JsonRequestBehavior.AllowGet);
+            }
+             catch(Exception ex)
 
-        USP_GetUserDetails_Result userdetails=    onlinetutor.USP_GetUserDetails(usename, password).FirstOrDefault();
-           //return RedirectToAction("Index", "Category", new { area = "Admin" });
-               return Json(userdetails,JsonRequestBehavior.AllowGet);
+            {
+                //   return Json(userdetails, JsonRequestBehavior.AllowGet);
+                return Content("2");
+            }
         }
     }
 }
