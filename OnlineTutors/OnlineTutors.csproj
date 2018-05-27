@@ -238,9 +238,10 @@
     <Content Include="Areas\Admin\Views\PageContent\Create.cshtml" />
     <Content Include="Areas\Admin\Views\PageContent\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\PageContent\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\PageBlog\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\PageBlog\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\PageBlog\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogContent\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogContent\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogContent\Index.cshtml" />
+    <Content Include="App_Data\onlinetutor_26052018.bak" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\commanscript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -293,7 +294,6 @@
     <Content Include="Views\Shared\_Layout_admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Login\Models\" />

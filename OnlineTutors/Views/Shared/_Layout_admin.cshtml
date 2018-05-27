@@ -1,6 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
+
+        <script src="~/Scripts/bootstrap.min.js"></script>
         <title>@Page.Title</title>
         @RenderSection("head", required: false)
     </head>
@@ -10,15 +12,29 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Welcome to Online Tutorials</a>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
-                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
+                        <span class="icon-bar"></span><span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
                 </div>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Category", "Index", "Category")</li>
+                        <li>@Html.ActionLink("PageMaster", "Index", "PageMaster")</li>
+                        <li>@Html.ActionLink("PageImages", "Index", "PageImages")</li>
+                        <li>@Html.ActionLink("PageContent", "Index", "PageContent")</li>
+                        <li>@Html.ActionLink("BlogContent", "Index", "BlogContent")</li>
+                    </ul>
+                
+                </div>
+
             </div>
         </div>
 
         @RenderBody()
         
-        <div id="custom-bootstrap-menu" class="navbar navbar-default navbar-fixed-bottom " role="navigation">
+        @*<div id="custom-bootstrap-menu" class="navbar navbar-default navbar-fixed-bottom " role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Copyrights Reserved</a>
@@ -27,6 +43,6 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div>*@
     </body>
 </html>

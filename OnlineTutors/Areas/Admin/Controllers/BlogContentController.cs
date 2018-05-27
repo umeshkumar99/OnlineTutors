@@ -28,6 +28,7 @@ namespace OnlineTutors.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(FormCollection frm)
         {
             try
@@ -78,6 +79,7 @@ namespace OnlineTutors.Areas.Admin.Controllers
             }
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit()
         {
             try
